@@ -12,7 +12,7 @@ This project is a modular **multivendor e-commerce platform** built using **Spri
 - **Description**: Manages user registration and login functionality.
 - **Tech Stack**: Spring Boot, Spring Security, Spring Data JPA, MySQL
 
-# Register User 
+### Register User 
 ```bash
 POST  http://localhost:8084/api/v1/auth/register
 ```
