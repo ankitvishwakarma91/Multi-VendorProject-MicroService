@@ -12,9 +12,21 @@ This project is a modular **multivendor e-commerce platform** built using **Spri
 - **Description**: Manages user registration and login functionality.
 - **Tech Stack**: Spring Boot, Spring Security, Spring Data JPA, MySQL
 
-### Register User 
+### Register User: 
 ```bash
 POST  http://localhost:8084/api/v1/auth/register
+```
+### Login User: 
+```bash
+POST  http://localhost:8084/api/v1/auth/login
+```
+### Get User by ID:
+```bash
+GET http://localhost:8084/api/v1/user/get/(our unique id ) like this -> 9a23280a-67cd-4007-90fe-e74d11041ebc
+```
+### Get All Users ( ONLY ADMIN CAN SEE ALL USERS )
+```bash
+GET http://localhost:8084/api/v1/user/all
 ```
 ---
 
@@ -24,12 +36,29 @@ POST  http://localhost:8084/api/v1/auth/register
   - Only admins and sellers can add new products.
 - **Tech Stack**: Spring Boot, Spring Data JPA, PostgreSQL, Spring Security
 
+### Add Product ( Only ADMIN & SELLER role can add product ) user can't add  Please provide Jwt token in header 
+```bash
+POST  localhost:8084/api/v1/product/create
+```
+### Get All Product  
+```bash
+GET  http://localhost:8084/api/v1/product/all
+```
+### Get Product by Id 
+```bash
+GET  localhost:8084/api/v1/product/getById?id=2
+```
+
 ---
 
 ### 📦 **Order Service**
 - **Description**: Processes product orders and sends order events to the message broker.
 - **Tech Stack**: Spring Boot, Spring Security, RabbitMQ, Spring Data JPA, PostgreSQL
-
+  
+### Order-Placed 
+```bash
+POST  localhost:8084/api/v1/order/placeOrder?productId=5&quantity=2
+```
 ---
 
 ### 📣 **Notification Service**
