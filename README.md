@@ -1,8 +1,5 @@
 ## MultiVendor Project
 
-# Creating the README.md content as a file for the user to download
-
-readme_content = """
 # 🛒 Multivendor E-commerce System
 
 This project is a modular **multivendor e-commerce platform** built using **Spring Boot**, **Spring Security**, **Spring Cloud Gateway**, and **RabbitMQ**. It demonstrates a microservices architecture that separates user management, product catalog, ordering, and notification functionalities across dedicated services.
