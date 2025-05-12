@@ -1,6 +1,7 @@
 package com.softworkshub.orderservice.controller;
 
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.softworkshub.orderservice.dto.OrderResponse;
 import com.softworkshub.orderservice.model.Order;
 import com.softworkshub.orderservice.service.OrderService;
@@ -30,7 +31,7 @@ public class OrderController {
             @RequestHeader("X-User-Email") String email,
             @RequestParam Long productId,
             @RequestParam Integer quantity
-    ){
+    ) throws JsonProcessingException {
         OrderResponse orderResponse = orderService.placeOrder(email, productId, quantity);
         return new ResponseEntity<>(orderResponse,HttpStatus.CREATED);
     }

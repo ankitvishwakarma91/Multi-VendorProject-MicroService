@@ -1,5 +1,6 @@
 package com.softworkshub.userservices.controller;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
 import com.softworkshub.userservices.dto.LoginResponse;
 import com.softworkshub.userservices.dto.LoginUser;
 import com.softworkshub.userservices.dto.RegisterUser;
@@ -23,12 +24,12 @@ public class AuthController {
     private AuthServiceImpl authService;
 
     @PostMapping("/register")
-    public ResponseEntity<User> crateUser(@RequestBody RegisterUser user) {
+    public ResponseEntity<User> crateUser(@RequestBody RegisterUser user) throws JsonProcessingException {
         return authService.createUser(user);
     }
 
     @PostMapping("/login")
-    public ResponseEntity<LoginResponse> login(@RequestBody LoginUser user){
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginUser user) throws JsonProcessingException {
         return authService.loginUser(user);
     }
 
